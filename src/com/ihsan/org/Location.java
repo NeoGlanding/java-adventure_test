@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Location {
     private int id;
     private String description;
-    private HashMap<String, Integer> exit = new HashMap<>();
+    public HashMap<String, Integer> exit = new HashMap<>();
 
     public Location(int id, String description) {
         this.id = id;
@@ -14,6 +14,13 @@ public class Location {
 
     public void addExit(String direction, int location) {
         exit.put(direction, location);
+    }
+
+    public int getExit(String direction) {
+        if (exit.containsKey(description)) {
+            return exit.get(direction);
+        }
+        return 0;
     }
 
 

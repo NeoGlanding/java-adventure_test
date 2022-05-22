@@ -14,6 +14,9 @@ public class Main {
         locations.put(3, new Location(3, "Father House"));
         locations.put(4, new Location(4, "Grandfather House"));
 
+        locations.get(1).addExit("N", 2);
+        locations.get(1).addExit("S", 3);
+
         int loc = 1;
         while (true) {
             if (loc == 0) {
@@ -24,10 +27,14 @@ public class Main {
             int oldLoc = loc;
             loc = scanner.nextInt();
 
-            if (!locations.containsKey(loc)) {
-                System.out.println("You cant go to that directions");
-                loc = 0;
-            }
+            Map<String, Integer> exit = locations.get(loc).exit;
+
+//            System.out.println("Available exit are");
+
+//            if (!locations.containsKey(loc)) {
+//                System.out.println("You cant go to that directions");
+//                loc = 0;
+//            }
 
         }
 
